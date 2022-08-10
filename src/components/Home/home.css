@@ -1,0 +1,64 @@
+/* progress */
+.progress-div {
+  text-align: center;
+  margin: 2% 0;
+}
+
+/* card */
+.stores {
+    background-color: #FBF8F1;
+    border-radius: 5px;
+    display: inline-block;
+    height: 200px;
+    margin: 1%;
+    text-align: left;
+    width: 48%;
+  }
+  
+  .store-img {
+    float: left;
+    height: 90%;
+    margin: 1.5%;
+    width: 45%;
+  }
+  
+  .store-title {
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+    padding-top: 2%;
+  }
+  
+  .store-sub {
+    color: grey;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+  }
+  
+.progress-box-main {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.progress-box {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1%;
+}
+
+.progress-box-title {
+    color: #54BAB9;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+}

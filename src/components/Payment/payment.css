@@ -1,0 +1,94 @@
+.payment-body {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.payment-details-div {
+    background-color: #FBF8F1;
+    border: 5px solid grey;
+    padding: 1%;
+    width: 40%;
+}
+
+.details-titles {
+    color: grey;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+}
+
+.detail {
+    color: black;
+    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+}
+
+.payment-navigate {
+    padding: 1%;
+    text-align: center;
+}
+
+.btn-navigate {
+    margin: 0 5%;
+}
+
+/* progress box */
+
+.progress-box-main {
+    background-color: #ffffff90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.progress-box {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1%;
+}
+
+.progress-box-title {
+    color: #54BAB9;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* status box */
+
+.status-box-main {
+    background-color: #ffffff90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.status-box {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1%;
+}
+
+.status-title {
+    color: #54BAB9;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+    margin: 0%;
+    margin-bottom: 1rem;
+}

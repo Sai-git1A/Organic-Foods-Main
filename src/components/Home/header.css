@@ -1,0 +1,108 @@
+/* Navbar */
+.Navbar {
+    background-color: #F7ECDE;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .nav-hidden {
+    color: #fff;
+    font-size: 2.34rem;
+  }
+
+  .navbar-brand {
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+  }
+  
+  .nav-brand-icon {
+    content: url(favicon.ico);
+    margin-right: 10px;
+  }
+  
+  .search-div {
+    position: absolute;
+    left: 60%;
+  }
+
+  .btn-login {
+    position: absolute;
+    left: 83%;
+  }
+
+  .btn-register, .btn-user {
+    position: absolute;
+    left: 91%;
+  }
+ 
+  .login-icon, 
+  .register-icon {
+    margin-right: 10px;
+  }
+  
+  /* Title */
+  .H-title {
+    background-image: url(Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 380px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .title {
+    font-family: 'Fredoka One', cursive;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    color: white;
+    margin-top: 6%;
+  }
+  
+  .download-btn {
+    margin: 5% 3% 5% 0;
+  }
+  
+  .header-logo{
+    color: white;
+    opacity: 0.6;
+    margin-top: 12%;
+    margin-bottom: 2%;
+    font-size: 8rem;
+  }
+  
+  .logo-title {
+    font-family: 'Fredoka One', cursive;
+    font-weight: 500;
+    color: white;
+    opacity: 0.8;
+    font-size: 3rem;
+  }
+  
+  @media (max-width: 990px)
+  {
+    .title {
+      font-size: 3.3rem;
+      line-height: 1.2;
+      margin-top: 3%;
+    }
+    .download-btn {
+      margin: 2% 3% 0 0;
+    }
+    .header-logo{
+      margin-top: 5%;
+      margin-bottom: 0;
+      font-size: 6rem;
+    }
+  
+    .logo-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 628px)
+  {
+    .H-title {
+      height: 400px;
+    }
+  }

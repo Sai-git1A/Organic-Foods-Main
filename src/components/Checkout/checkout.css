@@ -1,0 +1,98 @@
+.store-user-div {
+    display: flex;
+}
+
+.s-div {
+    display: inline-block;
+    padding: 2%;
+    height: 300px;
+    width: 53%;
+}
+
+.s-img {
+    height: 100%;
+    width:50%;
+    float: left;
+    margin-right: 2%;
+}
+
+.s-title {
+    color: #54BAB9;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
+.s-content, 
+.s-rating, 
+.s-location, 
+.s-timing,
+.s-contact {
+    color: grey;
+    display: block;
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin: 10px 0;
+}
+
+.user-div {
+    border-left: 1px solid lightgrey;
+    display: inline-block;
+    padding: 2%;
+    width: 29%;
+}
+
+.order-div {
+    border-left: 1px solid lightgrey;
+    display: inline-block;
+    padding: 2%;
+    width: 18%;
+}
+
+.user-title, .order-title {
+    color: #54BAB9;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
+.details {
+    color: grey;
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+}
+
+.cartItems-div {
+    border-radius: 10px;
+    background-color: #FBF8F1;
+    padding: 1%;
+    margin: 1%;
+    height: 150px;
+}
+
+.cartItems-img {
+    height: 100%;
+    width: 10%;
+    float: left;
+    margin-right: 2%;
+}
+
+.cartItems-title {
+    font-size: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.cartItems-price {
+    color: grey;
+    display: block;
+    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin-bottom: 1%;
+}
+
+.cartItems-quantity {
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+}

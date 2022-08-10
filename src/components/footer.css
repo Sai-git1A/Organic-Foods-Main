@@ -1,0 +1,29 @@
+/* footer */
+.footer {
+    background-color: #FBF8F1;
+    margin: 0;
+    padding: 1%;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .contact {
+    font-size: 0.85rem;
+    margin: 0 0.5% 0 0.5%;
+  }
+  
+  .social {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .social:hover {
+    color: darkslategrey;
+  }
+  
+  .copyright {
+    color: grey;
+    font-size: 0.8rem;
+    margin-top: 0.5%;
+    margin-bottom: 0;
+  }

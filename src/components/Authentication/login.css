@@ -1,0 +1,53 @@
+/* Navbar */
+.Navbar {
+    background-color: #F7ECDE;
+  }
+  
+  .navbar-brand {
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+  }
+
+  .nav-brand-icon {
+    content: url(favicon.ico);
+    margin-right: 10px;
+  }
+
+  .logo {
+    color: #000;
+    opacity: 1;
+    font-size: 11rem;
+    margin: 0;
+  }
+  
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  .h3 {
+    font-family: 'Fredoka One', cursive;
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .login-username {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .login-password {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  

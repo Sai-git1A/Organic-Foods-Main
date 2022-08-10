@@ -1,0 +1,24 @@
+/* Navbar */
+.Navbar {
+    background-color: #F7ECDE;
+  }
+
+  .nav-hidden {
+    color: #fff;
+    font-size: 2.34rem;
+  }
+  
+  .navbar-brand {
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+  }
+
+  .nav-brand-icon {
+    content: url(favicon.ico);
+    margin-right: 10px;
+  }
+
+  .logout-btn {
+    position: absolute;
+    left: 91%;
+  }

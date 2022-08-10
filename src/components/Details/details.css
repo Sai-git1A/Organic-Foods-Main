@@ -1,0 +1,112 @@
+.store-div {
+    padding: 2%;
+    height: 415px;
+}
+
+.img {
+    height: 100%;
+    width:45%;
+    float: left;
+    margin-right: 2%;
+}
+
+.store-title {
+    color: #54BAB9;
+    font-size: 2rem;
+}
+
+.store-content, 
+.store-rating, 
+.store-location, 
+.store-timing,
+.store-contact {
+    color: grey;
+    display: block;
+    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin: 10px 0;
+}
+
+.items-div {
+    border-radius: 10px;
+    background-color: #FBF8F1;
+    padding: 1%;
+    margin: 1%;
+    height: 150px;
+}
+
+.items-img {
+    height: 100%;
+    width: 10%;
+    float: left;
+    margin-right: 2%;
+}
+
+.items-title {
+    font-size: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.items-price {
+    color: grey;
+    display: block;
+    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin-bottom: 1%;
+}
+
+.items-quantity {
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+}
+
+.remove-quantity {
+    margin-right: 1%;
+}
+
+.add-quantity {
+    margin: 0 1%;
+}
+
+.checkout-div {
+    padding: 1%;
+    text-align: center;
+}
+
+.total-amount,
+.total-quantity {
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin: 0 5%;
+}
+
+.progress-box-main {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.progress-box {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1%;
+}
+
+.progress-box-title {
+    color: #54BAB9;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+}

@@ -1,0 +1,104 @@
+/* Menu */
+.filter-menu {
+    margin: 2% auto;
+  }
+  
+  .filter {
+    padding-left: 6%;
+  }
+  
+  @media (max-width: 770px) {
+    .filter {
+      padding-left: 0;
+    }
+  }
+  .rating {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 4%;
+    margin-top: 4%;
+  }
+  
+  .rating-title {
+    color: grey;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+  }
+  
+  .price {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 4%;
+    margin-top: 4%;
+  }
+  
+  .price-title {
+    color: grey;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+  }
+  
+  .menu-title {
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+  }
+  
+  .menu-item {
+    background-color: #FBF8F1;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 2%;
+    width: 20%;
+  }
+  
+  .menu-item {
+    padding: 1%;
+  }
+  
+  @media (max-width: 660px) {
+    .menu-item {
+      width: 40%;
+    }
+  }
+  
+  .menu-item-img {
+    width: 100%;
+  }
+  
+  .menu-item-name {
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    margin-top: 2%;
+    text-decoration: none;
+  }
+  
+  .menu-item-sub {
+    color: grey;
+  }
+  
+  .menu-item-price {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .menu-item-rs {
+    color: #54BAB9;
+    font-weight: bold;
+  }
+  
+  .menu-item-rs:hover {
+    text-decoration: underline;
+  }
+
+  .menu-item-price-btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .add-btn {
+    border: none;
+    position: relative;
+    left: 29%;
+  }
