@@ -17,7 +17,7 @@ function Home() {
             mode: 'cors',
             headers: {
                 'Accept': 'application/json',
-                'Access-Control-Allow-Origin': 'https://organicfoods-sai.netlify.app/',
+                'Access-Control-Allow-Origin': '*',
                 'Access-Control-Request-Method': 'GET',
                 'Content-Type': 'application/json'
             }
