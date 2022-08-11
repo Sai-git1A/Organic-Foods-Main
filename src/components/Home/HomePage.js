@@ -14,7 +14,11 @@ function Home() {
 
     useEffect(() => {
         fetch(url, {
-            headers: 'Content-Type: application/json'
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
         })
          .then(res => {
             if (res.status === 200) {
