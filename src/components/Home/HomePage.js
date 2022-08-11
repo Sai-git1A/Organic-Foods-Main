@@ -14,9 +14,11 @@ function Home() {
 
     useEffect(() => {
         fetch(url, {
-            method: 'GET',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
+                'Access-Control-Allow-Origin': 'https://organicfoods-sai.netlify.app/',
+                'Access-Control-Request-Method': 'GET',
                 'Content-Type': 'application/json'
             }
         })
