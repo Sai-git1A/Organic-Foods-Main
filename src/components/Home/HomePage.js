@@ -13,7 +13,9 @@ function Home() {
     const [isVisible, setVisible] = useState(true);
 
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            headers: 'Content-Type: application/json'
+        })
          .then(res => {
             if (res.status === 200) {
                 return res.json();
