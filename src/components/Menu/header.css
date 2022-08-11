@@ -68,6 +68,7 @@
   .s-card-front {
     background-color: #FBF8F1;
     border-radius: 5px;
+    box-shadow: -5px 5px 8px grey;
     height: 200px;
     text-align: left;
   }
@@ -96,22 +97,24 @@
   .s-card-back {
     background-color: #FBF8F1;
     border-radius: 5px;
+    box-shadow: 5px 5px 8px grey;
     height: 200px;
-    text-align: center;
   }
   
   .s-card-text {
     color: #54BAB9;
     font-family: 'Fredoka One', cursive;
     font-weight: lighter;
+    text-align: center;
     position: relative;
     top: 25%;
   }
   
   .s-card-text-sub {
+    display: inline;
     font-family: 'Fredoka One', cursive;
     font-weight: lighter;
-    text-align: right;
     position: relative;
     top: 25%;
+    right: -27rem;
   }

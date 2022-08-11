@@ -57,6 +57,11 @@
     padding: 1%;
 }
 
+.orders:hover {
+    cursor: pointer;
+    scale: 1.006;
+}
+
 .orders-div {
     display: inline-block;
     margin-right: 2%;

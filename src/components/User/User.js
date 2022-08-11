@@ -108,7 +108,7 @@ function User() {
             <div className="card-details tel-div">
                 <span className="tel-title">Mobile Number</span>
                 <h2 className="tel" style={{display:isVisible ? 'block' : 'none'}}>+91 {data.tel}</h2>
-                <input type='tel' name='tel' onChange={handelChange} placeholder='+91 0123456789' style={{display:isHidden ? 'none' : 'block'}}/>
+                <input type='tel' name='tel' onChange={handelChange} placeholder='0123456789' style={{display:isHidden ? 'none' : 'block'}}/>
             </div>
             <div className="card-details address-div">
                 <span className="address-title">Address</span>

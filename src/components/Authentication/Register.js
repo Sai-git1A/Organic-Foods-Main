@@ -61,7 +61,7 @@ function Register() {
                 </div>
                 <button className="w-100 btn btn-lg btn-outline-dark" type="submit">Register</button>
             </form>
-            <button onClick={() => navigate('/login')} className="w-100 btn btn-lg btn-dark" style={{marginTop: '1rem'}}>Signin</button>
+            <button onClick={() => navigate('/login')} className="w-100 btn btn-lg btn-dark" style={{marginTop: '1rem'}}>Sign in</button>
             </main>
             </div>
         </>

@@ -54,10 +54,6 @@ function Menu() {
       setCart(prev => {
         return [...prev, {"key": key, "id": id, "imgURL": imgURL, "title": title, "price": price, "quantity": quantity}];
       });
-      setStorage();
-    }
-
-    function setStorage() {
       sessionStorage.setItem('cart',JSON.stringify(cart));
     }
 

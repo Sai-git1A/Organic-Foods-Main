@@ -87,7 +87,7 @@ function Header(props) {
               <div className="col-lg-6 col-md-6">
                 <div className="s-card-back">
                   <h3 className="s-card-text">“I know once people get connected to real food, they never change back.”</h3>
-                  <h4 className="s-card-text-sub"> Alice Waters</h4>
+                  <h4 className="s-card-text-sub">- Alice Waters</h4>
                 </div>
               </div>
             </div>

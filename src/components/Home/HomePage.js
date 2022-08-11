@@ -21,14 +21,9 @@ function Home() {
                 return console.log("Error:" + res.status);
             }
          })
-        .then(data => handelFetch(data));
+        .then(data => setHomeData(data))
+        .then(() => {setState(true); setVisible(false);});
     }, []);
-
-    function handelFetch(data) {
-        setHomeData(data);
-        setState(!state);
-        setVisible(!isVisible);
-    };
 
     return (
         <>

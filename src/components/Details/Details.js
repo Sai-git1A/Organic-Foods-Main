@@ -71,7 +71,6 @@ function Details() {
             });
             return update;
         });
-        sessionStorage.setItem("cart",JSON.stringify(cartList));
     }
 
     function handelRemoveClick(id) {
@@ -84,14 +83,15 @@ function Details() {
             });
             return update;
         });
-        sessionStorage.setItem("cart",JSON.stringify(cartList));
     }
 
     function handelGoBackClick() {
+        sessionStorage.setItem("cart",JSON.stringify(cartList));
         navigate(`/listing/${store.name}`);
     }
 
     function handelCheckoutClick() {
+        sessionStorage.setItem("cart",JSON.stringify(cartList));
         if (!auth) {
             navigate('/login');
         } else {

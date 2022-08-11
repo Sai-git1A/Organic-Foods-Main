@@ -1,19 +1,22 @@
-/* progress */
-.progress-div {
-  text-align: center;
-  margin: 2% 0;
-}
-
 /* card */
 .stores {
     background-color: #FBF8F1;
     border-radius: 5px;
+    box-shadow: 5px 5px 8px grey;
     display: inline-block;
     height: 200px;
     margin: 1%;
     text-align: left;
     width: 48%;
   }
+
+.stores:hover {
+  scale: 1.006;
+}
+
+.stores:active {
+  scale: 1;
+}
   
   .store-img {
     float: left;
