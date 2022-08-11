@@ -21,8 +21,11 @@ function Home() {
                 return console.log("Error:" + res.status);
             }
          })
-        .then(data => setHomeData(data))
-        .then(() => {setState(true); setVisible(false);});
+        .then(data => {
+            setHomeData(data);
+            setState(true);
+            setVisible(false);
+        });
     }, []);
 
     return (
