@@ -30,7 +30,7 @@ function Menu() {
 
     useEffect(() => {
       const getCart = sessionStorage.getItem('cart');
-      if (getCart !== undefined) {
+      if (getCart !== null) {
         setCart(JSON.parse(getCart));
       }
     }, []);
