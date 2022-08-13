@@ -12,6 +12,7 @@ function Details() {
 
     const [stores, setStores] = useState([]);
     const [cartList, setCartList] = useState([]);
+    const [stable, setStable] = useState([]);
     const [total, setTotal] = useState({});
     const auth = sessionStorage.getItem('auth');
     const name = JSON.parse(sessionStorage.getItem('user'));
@@ -43,6 +44,13 @@ function Details() {
     }, []);
 
     useEffect(() => {
+        const cart = JSON.parse(sessionStorage.getItem('list'));
+        if (cart) {
+            setStable(cart);
+        }
+    }, []);
+
+    useEffect(() => {
         let sumPrice = 0;
         let sumQuantity = 0;
         cartList.forEach(item => {
@@ -61,11 +69,12 @@ function Details() {
         sessionStorage.setItem("cart",JSON.stringify(filterList));
     }
 
-    function handelAddClick(id) {
+    function handelAddClick(id, title) {
+        const food = stable.find(item => item.title === title)
         setCartList(prev => {
             const update = prev.map(item => {
                 if (item.id === id) {
-                    return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(item.price.slice(1, item.price.length)*2), quantity: item.quantity++}
+                    return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))+Number(food.price.slice(1, food.price.length))), quantity: item.quantity++}
                 }
                 return item;
             });
@@ -73,11 +82,14 @@ function Details() {
         });
     }
 
-    function handelRemoveClick(id) {
+    function handelRemoveClick(id, title) {
+        const food = stable.find(item => item.title === title);
         setCartList(prev => {
             const update = prev.map(item => {
                 if (item.id === id) {
-                    return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(item.price.slice(1, item.price.length)/2), quantity: item.quantity--}
+                    if (item.price !== food.price) {
+                        return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))-Number(food.price.slice(1, food.price.length))), quantity: item.quantity--}
+                    }
                 }
                 return item;
             });
@@ -136,17 +148,17 @@ function Details() {
                 <img className="items-img" src={item.imgURL} alt="Item-img" />
                 <h1 className="items-title">{item.title}</h1>
                 <span className="items-price">{item.price}</span>
-                <button className="btn btn-light remove-quantity" onClick={() => handelRemoveClick(item.id)}><i className="fa-solid fa-minus"></i></button>
+                <button className="btn btn-light remove-quantity" onClick={() => handelRemoveClick(item.id, item.title)}><i className="fa-solid fa-minus"></i></button>
                 <span className="items-quantity">{item.quantity}</span>
-                <button className="btn btn-light add-quantity" onClick={() => handelAddClick(item.id)}><i className="fa-solid fa-plus"></i></button>
+                <button className="btn btn-light add-quantity" onClick={() => handelAddClick(item.id, item.title)}><i className="fa-solid fa-plus"></i></button>
                 <button className="btn delete" onClick={() => handelClick(item.title)}><i className="fa-solid fa-trash"></i></button>
                 </div>
             )
         }): ""}
         <div className='checkout-div'>
         <button className="btn btn-outline-dark" onClick={handelGoBackClick}>Go Back</button>
-        <span className="total-amount">{total.quantity}</span>
-        <span className="total-quantity">{total.price}</span>
+        <span className="total-quantity">{total.quantity}</span>
+        <span className="total-amount">{total.price}</span>
         <button className="btn btn-outline-dark" onClick={handelCheckoutClick}>Check Out</button>
         </div>
         {isVisible ? <div className='progress-box-main'>

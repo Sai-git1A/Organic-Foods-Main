@@ -21,7 +21,10 @@ function Menu() {
                 return console.log("Error");
             }
           })
-          .then(data => setList(data));
+          .then(data => {
+            setList(data); 
+            sessionStorage.setItem('list', JSON.stringify(data));
+          });
     }, []);
 
     useEffect(() => {
