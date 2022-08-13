@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from './Header'
 import './listing.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 
 function Menu() {
     const params = useParams();
@@ -10,6 +10,7 @@ function Menu() {
     const [list, setList] = useState([]);
     const [filterList, setFilterList] = useState([]);
     const [cart, setCart] = useState([]);
+    const [show, setShow] = useState(true);
 
     useEffect(() => {
         fetch(url)
@@ -26,6 +27,13 @@ function Menu() {
     useEffect(() => {
       setFilterList(list);
     }, [list]);
+
+    useEffect(() => {
+      const getCart = sessionStorage.getItem('cart');
+      if (getCart !== undefined) {
+        setCart(JSON.parse(getCart));
+      }
+    }, []);
 
     function handelRatingChange(event) {
       const value = event.target.value;
@@ -54,13 +62,53 @@ function Menu() {
       setCart(prev => {
         return [...prev, {"key": key, "id": id, "imgURL": imgURL, "title": title, "price": price, "quantity": quantity}];
       });
-      sessionStorage.setItem('cart',JSON.stringify(cart));
+    }
+
+    function handelCart() {
+      setShow(!show);
+      if (cart !== []) {
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+      }
     }
 
 
     return (
         <>
-        <Header name={params.name} toCart={cart}/>
+        <section className="header" id="header">
+        <div className="container-fluid Navbar">
+          <nav className="navbar navbar-expand-md navbar-light">
+            <Link className="navbar-brand" to="/">
+            <img src="favicon.ico" alt="logo" width="30" height="24" className="d-inline-block align-text-top nav-brand-icon"/>
+            Organic Foods
+            </Link>
+            <span className="cart-length">{cart ? cart.length : 0}</span>
+            <button className="btn cart-btn" type='button' onClick={handelCart}><i className="fa-solid fa-cart-shopping cart-icon"></i></button>
+          </nav>
+          <Outlet />
+        </div>
+        </section>
+        <div className="card cart-menu" style={show?{visibility: 'hidden'}: {visibility: 'visible'}}>
+        <div className="card-header">Items
+        <span className="quantity">Q</span>
+        <span className="amount">Price</span>
+        </div>
+        <ul className="list-group list-group-flush">
+        {cart ? cart.map((item, index) => {
+              return (
+                <li className="list-group-item" key={item.key} id={index}>
+                {item.title}
+                <span className="quantity">{item.quantity}</span>
+                <span className="amount">{item.price}</span>
+                </li>
+              )
+            }) : ''}
+        </ul>
+        <Link to={`/Details/${params.name}`}>
+        <button className="btn btn-outline-dark" >View Cart</button>
+        </Link>
+        </div>
+        <Outlet />
+        <Header name={params.name} store={cart}/>
         <section className="menu" id="menu">
     <div className="container-fluid">
       <div className="filter-menu">
