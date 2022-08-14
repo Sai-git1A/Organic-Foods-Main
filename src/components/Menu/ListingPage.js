@@ -62,9 +62,11 @@ function Menu() {
 
     function handelClick(key, id, imgURL, title, price) {
       const quantity = 1;
+      const btn = document.getElementById('btn'+id);
       setCart(prev => {
         return [...prev, {"key": key, "id": id, "imgURL": imgURL, "title": title, "price": price, "quantity": quantity}];
       });
+      btn.disabled = true;
     }
 
     function handelCart() {
@@ -187,7 +189,7 @@ function Menu() {
                   <p>{item.rating}</p>
                   <div className="menu-item-price-btn-div">
                   <span className="menu-item-price" >Price: <span className='menu-item-rs'>{item.price}</span></span>
-                  <button className="btn btn-outline-success add-btn" onClick={() => handelClick(item._id, item.id, item.imgURL, item.title, item.price)}><i className="fa-solid fa-cart-plus cart-icon"></i></button>
+                  <button className="btn btn-outline-success add-btn" id={'btn'+item.id} onClick={() => handelClick(item._id, item.id, item.imgURL, item.title, item.price)}><i className="fa-solid fa-cart-plus cart-icon"></i></button>
                   </div>
                 </div>     
                 );

@@ -58,7 +58,7 @@ function Details() {
         });
 
         cartList.forEach(item => {
-            sumQuantity += item.quantity;
+            sumQuantity += Number(item.quantity);
         });
         setTotal({price: "₹"+sumPrice, quantity: "Q-"+sumQuantity});
     }, [cartList]);
