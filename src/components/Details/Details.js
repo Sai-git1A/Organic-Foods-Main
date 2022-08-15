@@ -74,7 +74,7 @@ function Details() {
         setCartList(prev => {
             const update = prev.map(item => {
                 if (item.id === id) {
-                    return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))+Number(food.price.slice(1, food.price.length))), quantity: item.quantity++}
+                    return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))+Number(food.price.slice(1, food.price.length))), quantity: (item.quantity+1)}
                 }
                 return item;
             });
@@ -88,7 +88,7 @@ function Details() {
             const update = prev.map(item => {
                 if (item.id === id) {
                     if (item.price !== food.price) {
-                        return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))-Number(food.price.slice(1, food.price.length))), quantity: item.quantity--}
+                        return {...prev, key: item.key, id: item.id, imgURL: item.imgURL, title: item.title, price: "₹"+(Number(item.price.slice(1, item.price.length))-Number(food.price.slice(1, food.price.length))), quantity: (item.quantity-1)}
                     }
                 }
                 return item;
