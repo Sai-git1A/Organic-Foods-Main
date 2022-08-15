@@ -14,6 +14,7 @@ function Details() {
     const [cartList, setCartList] = useState([]);
     const [stable, setStable] = useState([]);
     const [total, setTotal] = useState({});
+    const [btns, setBtns] = useState([]);
     const auth = sessionStorage.getItem('auth');
     const name = JSON.parse(sessionStorage.getItem('user'));
     const [isVisible, setVisible] = useState(false);
@@ -51,6 +52,13 @@ function Details() {
     }, []);
 
     useEffect(() => {
+        const buttons = sessionStorage.getItem('btn');
+        if (buttons) {
+            setBtns(buttons);
+        }
+    }, []);
+
+    useEffect(() => {
         let sumPrice = 0;
         let sumQuantity = 0;
         cartList.forEach(item => {
@@ -63,9 +71,17 @@ function Details() {
         setTotal({price: "₹"+sumPrice, quantity: "Q-"+sumQuantity});
     }, [cartList]);
 
-    function handelClick(title) {
+    function handelClick(id, title) {
+        setBtns([]);
         const filterList = cartList.filter(item => item.title !== title);
         setCartList(filterList);
+        filterList.map(item => {
+            return (
+                setBtns(prev => {
+                    return [...prev, item.id];
+                })
+            );
+        })
         sessionStorage.setItem("cart",JSON.stringify(filterList));
     }
 
@@ -99,11 +115,13 @@ function Details() {
 
     function handelGoBackClick() {
         sessionStorage.setItem("cart",JSON.stringify(cartList));
+        sessionStorage.setItem('btn', btns);
         navigate(`/listing/${store.name}`);
     }
 
     function handelCheckoutClick() {
         sessionStorage.setItem("cart",JSON.stringify(cartList));
+        sessionStorage.setItem('btn', btns);
         if (!auth) {
             navigate('/login');
         } else {
@@ -151,7 +169,7 @@ function Details() {
                 <button className="btn btn-light remove-quantity" onClick={() => handelRemoveClick(item.id, item.title)}><i className="fa-solid fa-minus"></i></button>
                 <span className="items-quantity">{item.quantity}</span>
                 <button className="btn btn-light add-quantity" onClick={() => handelAddClick(item.id, item.title)}><i className="fa-solid fa-plus"></i></button>
-                <button className="btn delete" onClick={() => handelClick(item.title)}><i className="fa-solid fa-trash"></i></button>
+                <button className="btn delete" onClick={() => handelClick(item.id, item.title)}><i className="fa-solid fa-trash"></i></button>
                 </div>
             )
         }): ""}

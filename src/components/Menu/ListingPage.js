@@ -11,6 +11,7 @@ function Menu() {
     const [filterList, setFilterList] = useState([]);
     const [cart, setCart] = useState([]);
     const [show, setShow] = useState(true);
+    const [btns, setBtns] = useState([]);
 
     useEffect(() => {
         fetch(url)
@@ -35,6 +36,13 @@ function Menu() {
       const getCart = sessionStorage.getItem('cart');
       if (getCart !== null) {
         setCart(JSON.parse(getCart));
+      }
+    }, []);
+
+    useEffect(() => {
+      const getBtn = sessionStorage.getItem('btn');
+      if (getBtn !== null) {
+        setBtns(getBtn);
       }
     }, []);
 
@@ -63,16 +71,27 @@ function Menu() {
     function handelClick(key, id, imgURL, title, price) {
       const quantity = 1;
       const btn = document.getElementById('btn'+id);
-      setCart(prev => {
-        return [...prev, {"key": key, "id": id, "imgURL": imgURL, "title": title, "price": price, "quantity": quantity}];
-      });
-      btn.disabled = true;
+      const result = btns.includes(Number(id));
+      if (result === true) {
+        btn.disabled = true;
+      } else if (result === false) {
+        setCart(prev => {
+          return [...prev, {"key": key, "id": id, "imgURL": imgURL, "title": title, "price": price, "quantity": quantity}];
+        });
+        btn.disabled = true;
+        setBtns(prev => {
+          return [...prev, id];
+        });
+      }
     }
 
     function handelCart() {
       setShow(!show);
       if (cart !== []) {
         sessionStorage.setItem('cart', JSON.stringify(cart))
+      }
+      if (btns !== []) {
+        sessionStorage.setItem('btn', btns);
       }
     }
 
